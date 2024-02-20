@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   # verb 'path', to: 'controller#action'
   # Add a tasks
-  get '/tasks', to: 'tasks#tasks'
+  root to: 'tasks#tasks'
+  get '/tasks/:id', to: 'tasks#show', as: :show
 end

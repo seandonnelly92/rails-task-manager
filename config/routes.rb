@@ -9,7 +9,12 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   # verb 'path', to: 'controller#action'
-  # Add a tasks
-  root to: 'tasks#tasks'
-  get '/tasks/:id', to: 'tasks#show', as: :show
+
+  get 'tasks', to: 'tasks#index', as: :tasks
+  root to: 'tasks#index'
+  get 'tasks/new', to: 'tasks#new', as: :new
+  get 'tasks/:id', to: 'tasks#show', as: :task
+  patch 'tasks/:id', to: 'tasks#update'
+  post 'tasks', to: 'tasks#create', as: :create
+  get 'tasks/:id/edit', to: 'tasks#edit', as: :edit
 end
